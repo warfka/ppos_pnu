@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ppos_pnu/pages/news_page.dart';
 import 'package:ppos_pnu/pages/shop_page.dart';
 import 'package:ppos_pnu/ui/appbar_widget.dart';
 import 'user_menu_page.dart';
@@ -15,10 +16,7 @@ class _MainPageState extends State<MainPage> {
   static const TextStyle optionStyle =
   TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static const List<Widget> _widgetOptions = <Widget>[
-    Text(
-      'Index 0: News',
-      style: optionStyle,
-    ),
+    NewsPage(),
     UserMenuPage(),
     ShopPage(),
   ];
