@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../ui/profile/user_image_widget.dart';
+
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
@@ -24,9 +26,9 @@ class _ProfilePageState extends State<ProfilePage> {
                   height: 200,
                   color: Colors.white,
                   child: Center(
-                    child: CircleAvatar(
-                      backgroundImage: AssetImage(''),
-                      radius: 60,
+                    child: ProfileWidget(
+                      //imagePath: imagePath,
+                      onClicked: () async {}, imagePath: '',
                     ),
                   ),
                 ),
