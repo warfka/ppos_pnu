@@ -64,7 +64,10 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
+    - assets/ff.png
+    - assets/f.jpeg
     - assets/ppos-pnu-logo.png
+    - assets/avatar.jpg
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 

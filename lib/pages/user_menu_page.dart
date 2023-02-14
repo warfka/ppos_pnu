@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ppos_pnu/pages/user_menu_page.dart';
-import 'package:ppos_pnu/pages/user_pages/get_points_paage.dart';
+import 'package:ppos_pnu/pages/user_pages/get_points_page.dart';
 import 'package:ppos_pnu/pages/user_pages/profile_page.dart';
 
 

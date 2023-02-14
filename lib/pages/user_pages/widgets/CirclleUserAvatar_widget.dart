@@ -33,13 +33,13 @@ class ProfileWidget extends StatelessWidget {
   }
 
   Widget buildImage() {
-    //final image = NetworkImage(imagePath);
+    final image = NetworkImage('https://static.wikia.nocookie.net/unofficial-alphabet-lore/images/4/46/A%28Lowercase%29.PNG.png/revision/latest?cb=20221204162859');
 
     return ClipOval(
       child: Material(
         color: Colors.transparent,
         child: Ink.image(
-          image: AssetImage('graphics/background.png'),
+          image: const AssetImage('assets/ppos-pnu-logo.png'),
           fit: BoxFit.cover,
           width: 128,
           height: 128,

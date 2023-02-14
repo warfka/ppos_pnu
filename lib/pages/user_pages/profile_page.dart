@@ -37,7 +37,20 @@ class _ProfilePageState extends State<ProfilePage> {
                   color: Colors.white,
                   child: Center(
                     child: Text(
-                      'Баллы: ',
+                      'Егор Сироткин',
+                      style: TextStyle(
+                        fontSize: 25,
+
+                      ),
+                    ),
+                  ),
+                ),
+                Container(
+                  height: 50,
+                  color: Colors.white,
+                  child: Center(
+                    child: Text(
+                      'Баллы: 3',
                       style: TextStyle(
                         fontSize: 25,
 
