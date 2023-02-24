@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ppos_pnu/pages/user_menu_page.dart';
 import 'package:ppos_pnu/pages/user_pages/get_points_page.dart';
 import 'package:ppos_pnu/pages/user_pages/profile_page.dart';
+import 'package:ppos_pnu/pages/user_pages/rating_page.dart';
 
 
 class UserMenuPage extends StatefulWidget {
@@ -61,7 +62,7 @@ class _UserMenuPageState extends State<UserMenuPage> {
           body: TabBarView(
             children: [
               ProfilePage(),
-              ProfilePage(),//OutgoingPage(),
+              MyListScreen(),//OutgoingPage(),
               QRViewExample(),//MissedPage(),
             ],
           ),

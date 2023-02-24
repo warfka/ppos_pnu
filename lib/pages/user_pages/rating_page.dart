@@ -1,6 +1,5 @@
 import 'dart:convert';
-import 'package:apiJsonListview/API.dart';
-import 'package:apiJsonListview/models/User.dart';
+
 import 'package:flutter/material.dart';
 
 
@@ -11,37 +10,23 @@ class MyListScreen extends StatefulWidget {
 }
 
 class _MyListScreenState extends State {
-  var users = new List<User>();
-
-  _getUsers() {
-    API.getUsers().then((response) {
-      setState(() {
-        Iterable list = json.decode(response.body);
-        users = list.map((model) => User.fromJson(model)).toList();
-      });
-    });
-  }
-
-  initState() {
-    super.initState();
-    _getUsers();
-  }
-
-  dispose() {
-    super.dispose();
-  }
-
+  final titles = ["Анастасия Якубовская", "Алёна Титова", "Егор Сироткин","Марк Драгунов"];
+  final titlesN = ['1', '2', '3', '4'];
+  final icons = [Icons.ac_unit, Icons.access_alarm, Icons.access_time];
   @override
-  build(context) {
-    return Scaffold(
-        appBar: AppBar(
-          title: Text("User List"),
-        ),
-        body: ListView.builder(
-          itemCount: users.length,
-          itemBuilder: (context, index) {
-            return ListTile(title: Text(users[index].name));
-          },
-        ));
+  Widget build(BuildContext context) {
+    return ListView.builder(
+        itemCount: titles.length,
+        itemBuilder: (context, index) {
+          return Card(
+              child: ListTile(
+                  title: Text(titles[index]),
+                  //subtitle: Text(subtitles[index]),
+                  leading: CircleAvatar(
+                      backgroundImage: NetworkImage(
+                          "https://images.unsplash.com/photo-1547721064-da6cfb341d50")),
+                  trailing: Text((titlesN[index])
+              )));
+        });
   }
 }

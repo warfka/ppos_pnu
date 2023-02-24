@@ -58,43 +58,41 @@ class _ProfilePageState extends State<ProfilePage> {
                     ),
                   ),
                 ),
-                //Text('Лучшие users'),
-                /*Expanded(
-              flex: 3,
-              child: FutureBuilder<User?>(
-                future: _client.getUser(id: '2'),
-                builder: (context, snapshot) {
-                  if (snapshot.hasData) {
-                    User? userInfo = snapshot.data;
-
-                    if (userInfo != null) {
-                      Data userData = userInfo.data;
-
-                      return Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Image.network(userData.avatar),
-                          SizedBox(height: 8.0),
-                          Text(
-                            '${userInfo.data.firstName} ${userInfo.data.lastName}',
-                            style: TextStyle(fontSize: 16.0),
-                          ),
-                          Text(
-                            userData.email,
-                            style: TextStyle(fontSize: 16.0),
-                          ),
-                        ],
-                      );
-                    }
-                  }
-                  return CircularProgressIndicator();
-                },
-              ),
-            ),*/
+                Container(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Material(
+                        color: Colors.lightBlue,
+                        elevation: 8,
+                        borderRadius: BorderRadius.circular(25),
+                        clipBehavior: Clip.antiAliasWithSaveLayer,
+                        child: InkWell(
+                            onTap: (){},
+                            child: Column(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Ink.image(
+                                  image: const AssetImage('assets/pitogu.png'),//image,
+                                  fit: BoxFit.cover,
+                                  width: 128,
+                                  height: 128,
+                                ),
+                                SizedBox(height: 6),
+                                Text(
+                                  'Мерч ПИТОГУ',
+                                  style: TextStyle(fontSize: 15, color: Colors.black),
+                                )
+                              ],
+                            )
+                        ),
+                      )
+                    ],
+                  ),
+                )
               ],
             ),
           ),
-
         )
     );
   }
