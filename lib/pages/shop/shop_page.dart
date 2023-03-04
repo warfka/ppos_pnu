@@ -14,9 +14,9 @@ class _ShopPageState extends State<ShopPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.start,
-      mainAxisSize: MainAxisSize.min,
+    return Wrap(
+      spacing: 5,
+      runSpacing: 5,
       children: [
         Container(
           child: Row(
@@ -50,8 +50,6 @@ class _ShopPageState extends State<ShopPage> {
             ],
           ),
         ),
-        SizedBox(height: 5,
-        width: 5,),
         Container(
           child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
@@ -72,8 +70,8 @@ class _ShopPageState extends State<ShopPage> {
                           width: 128,
                           height: 128,
                         ),
-                        SizedBox(height: 6),
-                        Text(
+                        const SizedBox(height: 6),
+                        const Text(
                           'Мерч ПИТОГУ',
                           style: TextStyle(fontSize: 15, color: Colors.black),
                         )

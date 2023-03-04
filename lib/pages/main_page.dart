@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ppos_pnu/pages/news/news_page.dart';
-import 'package:ppos_pnu/pages/shop_page.dart';
+import 'package:ppos_pnu/pages/shop/shop_page.dart';
 import 'package:ppos_pnu/ui/appbar_widget.dart';
 import 'user_menu_page.dart';
 
