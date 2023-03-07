@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'main_page.dart';
+import '../main_page.dart';
 
 class LoginApp extends StatelessWidget{
   const LoginApp({super.key});
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
