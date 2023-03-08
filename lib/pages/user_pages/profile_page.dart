@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../../ui/profile/user_image_widget.dart';
 
-
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
 
@@ -38,6 +37,7 @@ class _ProfilePageState extends State<ProfilePage> {
                   child: Center(
                     child: Text(
                       'Егор Сироткин',
+                          //'$_UserToken',
                       style: TextStyle(
                         fontSize: 25,
 
