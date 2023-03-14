@@ -78,18 +78,26 @@ class _AuthScreenState extends State<AuthScreen> {
   Widget registerWidget() {
     return Column(
       children: [
-        InputTextFieldWidget(registerationController.nameController, 'ФИО', false),
-        SizedBox(
+        InputTextFieldWidget(registerationController.fullNameController, 'ФИО', false),
+        const SizedBox(
+          height: 20,
+        ),
+        InputTextFieldWidget(registerationController.facultyController, 'институт', false),
+        const SizedBox(
+          height: 20,
+        ),
+        InputTextFieldWidget(registerationController.studyGroupController, 'учебная группа', false),
+        const SizedBox(
           height: 20,
         ),
         InputTextFieldWidget(
             registerationController.emailController, 'эл. почта', false),
-        SizedBox(
+        const SizedBox(
           height: 20,
         ),
         InputTextFieldWidget(
             registerationController.passwordController, 'пароль', true),
-        SizedBox(
+        const SizedBox(
           height: 20,
         ),
         SubmitButton(

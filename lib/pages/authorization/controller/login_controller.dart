@@ -40,6 +40,7 @@ class LoginController extends GetxController {
           Get.off(MainPage());
 
         _UserToken = token;
+        print(token);
 
       } else {
         showDialog(
@@ -61,8 +62,8 @@ class LoginController extends GetxController {
             return SimpleDialog(
               title: Text('Ошибка'),
               contentPadding: EdgeInsets.all(20),
-              children: [Text(error.toString())],
               backgroundColor: Colors.redAccent,
+              children: [Text(error.toString())],
             );
           });
     }

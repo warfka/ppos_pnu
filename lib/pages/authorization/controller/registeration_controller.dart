@@ -8,7 +8,9 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:http/http.dart' as http;
 
 class RegisterationController extends GetxController {
-  TextEditingController nameController = TextEditingController();
+  TextEditingController fullNameController = TextEditingController();
+  TextEditingController facultyController = TextEditingController();
+  TextEditingController studyGroupController = TextEditingController();
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
 
@@ -20,31 +22,44 @@ class RegisterationController extends GetxController {
       var url = Uri.parse(
           ApiEndPoints.baseUrl + ApiEndPoints.authEndpoints.registerEmail);
       Map body = {
-        'name': nameController.text,
+        'fullName': fullNameController.text,
+        'faculty' : facultyController.text.toUpperCase(),
+        'studyGroup' : studyGroupController.text,
         'email': emailController.text.trim(),
         'password': passwordController.text
       };
 
       http.Response response =
       await http.post(url, body: jsonEncode(body), headers: headers);
+      var statusCode = response.statusCode;
 
       if (response.statusCode == 200) {
         final json = jsonDecode(response.body);
-        if (json['code'] == 0) {
-          var token = json['data']['Token'];
+
+          var token = json['token'];
           print(token);
           final SharedPreferences? prefs = await _prefs;
 
           await prefs?.setString('token', token);
-          nameController.clear();
+          fullNameController.clear();
+          facultyController.clear();
+          studyGroupController.clear();
           emailController.clear();
           passwordController.clear();
           Get.off(MainPage());
-        } else {
-          throw jsonDecode(response.body)["message"] ?? "Unknown Error Occured";
-        }
+        print(token);
+
       } else {
-        throw jsonDecode(response.body)["Message"] ?? "Unknown Error Occured";
+        showDialog(
+            context: Get.context!,
+            builder: (context) {
+              return SimpleDialog(
+                title: Text('Ошибка'),
+                contentPadding: EdgeInsets.all(20),
+                children: [Text('Код ошибки: $statusCode')],
+                backgroundColor: Colors.redAccent,
+              );
+            });
       }
     } catch (e) {
       Get.back();
@@ -52,8 +67,9 @@ class RegisterationController extends GetxController {
           context: Get.context!,
           builder: (context) {
             return SimpleDialog(
-              title: Text('Error'),
+              title: Text('Ошибка'),
               contentPadding: EdgeInsets.all(20),
+              backgroundColor: Colors.redAccent,
               children: [Text(e.toString())],
             );
           });

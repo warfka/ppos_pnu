@@ -32,7 +32,7 @@ class SubmitButton extends StatelessWidget {
           onPressed: onPressed,
           child: Text(title,
               style: const TextStyle(
-                fontSize: 24,
+                fontSize: 20,
                 color: Colors.white,
                 fontWeight: FontWeight.w600,
               ))),
